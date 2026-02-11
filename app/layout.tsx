@@ -29,7 +29,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} light`} suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased text-sm`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased text-sm pt-20`}
       >
         <ToastProvider>
           <AnchoredToastProvider>
