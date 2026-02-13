@@ -1,19 +1,16 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Inter } from "next/font/google";
+import { Inter, Crimson_Text } from "next/font/google";
 import "./globals.css";
 import { ToastProvider, AnchoredToastProvider } from "@/components/ui/toast";
 import { SiteHeader } from "@/components/side-header";
 
-const inter = Inter({ subsets: ['latin'], variable: '--font-sans' });
+const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const crimsonText = Crimson_Text({
   subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+  variable: "--font-heading",
+  weight: ["400", "600", "700"],
+  style: ["normal", "italic"],
 });
 
 export const metadata: Metadata = {
@@ -27,10 +24,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} light`} suppressHydrationWarning>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased text-sm pt-20`}
-      >
+    <html lang="en" className={`${inter.variable} ${crimsonText.variable} light`} suppressHydrationWarning>
+      <body className="antialiased text-sm font-sans ">
         <ToastProvider>
           <AnchoredToastProvider>
             <div className="relative isolate flex min-h-svh flex-col overflow-clip [--header-height:4rem]">
