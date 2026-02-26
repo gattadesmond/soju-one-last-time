@@ -48,16 +48,16 @@ function playAlarmSound() {
   }
 }
 
-// Nhạc tập trung (free MP3 / stream)
+// Nhạc tập trung – Orange Free Sounds (free MP3, tải nhanh hơn SoundHelix)
 const FOCUS_TRACKS = [
-  { id: "1", title: "Lofi Focus", artist: "SoundHelix", src: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" },
-  { id: "2", title: "Calm Piano", artist: "SoundHelix", src: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3" },
-  { id: "3", title: "Ambient Study", artist: "SoundHelix", src: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3" },
-  { id: "4", title: "Soft Keys", artist: "SoundHelix", src: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3" },
-  { id: "5", title: "Quiet Flow", artist: "SoundHelix", src: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-5.mp3" },
-  { id: "6", title: "Deep Focus", artist: "SoundHelix", src: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-6.mp3" },
-  { id: "7", title: "Morning Calm", artist: "SoundHelix", src: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-7.mp3" },
-  { id: "8", title: "Study Room", artist: "SoundHelix", src: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-8.mp3" },
+  { id: "1", title: "Lofi Chill Study", artist: "Alexander Blu", src: "https://orangefreesounds.com/wp-content/uploads/2026/02/Lo-fi-chill-study-music-relaxing-background-beats.mp3" },
+  { id: "2", title: "Emotional Piano", artist: "Alexander Blu", src: "https://orangefreesounds.com/wp-content/uploads/2026/01/Emotional-piano-descent-ambient-cinematic-background-music.mp3" },
+  { id: "3", title: "Futuristic Synth", artist: "Alexander Blu", src: "https://orangefreesounds.com/wp-content/uploads/2026/01/Futuristic-synth-score-ambient-background-music.mp3" },
+  { id: "4", title: "Chill Bossa Nova", artist: "Alexander Blu", src: "https://orangefreesounds.com/wp-content/uploads/2026/01/Chill-downtempo-bossa-nova-ambient-electronic-music.mp3" },
+  { id: "5", title: "Thinking Music", artist: "Alexander Blu", src: "https://www.orangefreesounds.com/wp-content/uploads/2015/01/Thinking-music.mp3" },
+  { id: "6", title: "Rain Study", artist: "Alexander Blu", src: "https://www.orangefreesounds.com/wp-content/uploads/2017/06/Rain-study-sounds.mp3" },
+  { id: "7", title: "Cinematic Emotive", artist: "Alexander Blu", src: "https://orangefreesounds.com/wp-content/uploads/2026/01/Cinematic-deeply-emotive-instrumental-music.mp3" },
+  { id: "8", title: "Gentle Harp & Chimes", artist: "Alexander Blu", src: "https://orangefreesounds.com/wp-content/uploads/2025/11/Gentle-harp-choir-and-chimes-enchanting-background-music.mp3" },
 ];
 
 export default function PomodoroPage() {
