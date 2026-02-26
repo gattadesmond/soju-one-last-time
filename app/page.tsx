@@ -16,20 +16,11 @@ export default function Page() {
             </div>
 
 
-
             <h3 className="scroll-m-20 text-2xl font-semibold tracking-tight">
                 Pomodoro
             </h3>
 
-            <div>fewf</div>
-            <div>fewf</div>
-            <div>fewf</div>
-
-            <div>fewf</div>
-            <div>fewf</div>
-            <div>fewf</div>
-            <div>fewf</div>
-            <div>fewf</div>
+           
         </section>
 
     );
