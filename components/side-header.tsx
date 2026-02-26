@@ -22,7 +22,7 @@ function SiteHeader() {
           </div>
         </div>
         <div className="flex transition-all items-center gap-6">
-          <Link target="_self" href="/">
+          <Link target="_self" href="/about">
             <div className="text-sm font-medium transition-colors duration-200 text-muted-foreground hover:text-foreground ">
               About
             </div>
