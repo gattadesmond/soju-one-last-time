@@ -25,7 +25,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${inter.variable} ${crimsonText.variable} light`} suppressHydrationWarning>
-      <body className="antialiased text-sm font-sans ">
+      <body className="antialiased  font-sans  ">
         <ToastProvider>
           <AnchoredToastProvider>
             <div className="relative isolate flex min-h-svh flex-col overflow-clip [--header-height:4rem]">

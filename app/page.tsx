@@ -1,15 +1,26 @@
+import Image from "next/image";
 
 export default function Page() {
     return (
-        <section className="container">
-            <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight text-balance">
-                Việt Hùng
+        <section className="container pt-28">
+            <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight text-balance  ">
+                Soju
             </h1>
 
-            <div>
+            <div className="text-muted-foreground mt-5">
                 I design & code things on the web. This website is my digital garden, where I store the things I have been learning and love.
             </div>
-            <img src="https://lh3.googleusercontent.com/gg-dl/AOI_d_9PJgiHop88BPkY0-18fSDb0jCUJJa7Z4a8jardg93gDJ0NatggREflyuGAy3X-TqMzWdSb-a9WtuSs3qBo6xom1NdC06VHFIJ4gbtt6RvOJRXjDvmg0bT0j-Qqgd3UkUXRee0jKe_C2Yy5ATPWFNaEGrzNdAmDK9ZNrE3OZVJ-WxQLIw=s1024-rj" alt="Profile" className="rounded-full" />
+
+            <div className="relative -md-5 md:-mx-8">
+                <Image src="/bg-soju-1.png" alt="Profile" width={800} height={533} />
+
+            </div>
+
+
+
+            <h3 className="scroll-m-20 text-2xl font-semibold tracking-tight">
+                Pomodoro
+            </h3>
 
             <div>fewf</div>
             <div>fewf</div>

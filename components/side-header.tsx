@@ -7,7 +7,7 @@ function SiteHeader({
   ...props
 }: React.ComponentProps<"div">) {
   return (
-    <header className="backdrop-blur-sm before:absolute before:inset-x-0 before:bottom-0 before:h-px before:bg-border/64 fixed top-0 left-0 right-0 z-10 bg-white ">
+    <header className="backdrop-blur-sm before:absolute before:inset-x-0 before:bottom-0 before:h-px before:bg-border/64 fixed top-0 left-0 text-sm right-0 z-10 bg-white ">
       <div className="flex justify-between items-center py-3.5  container  ">
         <div className="relative">
           <div className="flex items-center">
