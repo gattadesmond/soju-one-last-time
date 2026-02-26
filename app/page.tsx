@@ -20,7 +20,22 @@ export default function Page() {
                 Pomodoro
             </h3>
 
-           
+            <ol className="list grid text-sm list-inside list-decimal grid-cols-1 gap-y-2 mt-3 ">
+                {" "}
+                <li>
+                    🐼 <strong className="font-semibold"> 1 pomodoro</strong> for read book
+                    (Search inside yourself)
+                </li>{" "}
+                <li>
+                    🚶 <strong className="font-semibold"> 1 pomodoros</strong> for long walk
+                    &nbsp;
+                </li>
+            </ol>
+
+
+
+
+
         </section>
 
     );
