@@ -37,7 +37,7 @@ function SiteHeader() {
               Video
             </div>
           </Link>
-          <Link target="_self" href="/jobs">
+          <Link target="_self" href="/pomodoro">
             <div className="text-sm font-medium transition-colors duration-200 text-muted-foreground hover:text-foreground ">
               Pomodoro
             </div>
