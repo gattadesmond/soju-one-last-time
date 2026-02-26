@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
-import { Inter, Crimson_Text } from "next/font/google";
+import { Crimson_Text } from "next/font/google";
+import "@fontsource/google-sans-flex/latin.css";
+import "@fontsource/google-sans-flex/vietnamese.css";
 import "./globals.css";
 import { ToastProvider, AnchoredToastProvider } from "@/components/ui/toast";
 import { SiteHeader } from "@/components/side-header";
-
-const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 
 const crimsonText = Crimson_Text({
   subsets: ["latin"],
@@ -24,7 +24,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${crimsonText.variable} light`} suppressHydrationWarning>
+    <html lang="en" className={`${crimsonText.variable} light`} suppressHydrationWarning>
       <body className="antialiased  font-sans  ">
         <ToastProvider>
           <AnchoredToastProvider>
