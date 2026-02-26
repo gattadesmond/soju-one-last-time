@@ -1,14 +1,9 @@
-"use client"
-import { cn } from "@/lib/utils"
 import Link from "next/link"
 
-function SiteHeader({
-  className,
-  ...props
-}: React.ComponentProps<"div">) {
+function SiteHeader() {
   return (
-    <header className="backdrop-blur-sm before:absolute before:inset-x-0 before:bottom-0 before:h-px before:bg-border/64 fixed top-0 left-0 text-sm right-0 z-10 bg-white ">
-      <div className="flex justify-between items-center py-3.5  container  ">
+    <header className="backdrop-blur-sm before:absolute before:inset-x-0 before:bottom-0 before:h-px before:bg-border/64 fixed top-0 left-0 text-sm right-0 z-10  bg-white ">
+      <div className="flex justify-between items-center py-3.5  container px-5 md:px-8 ">
         <div className="relative">
           <div className="flex items-center">
             <Link href="/" className="text-primary">
@@ -26,24 +21,24 @@ function SiteHeader({
             </Link>
           </div>
         </div>
-        <div className="flex bg-accent rounded-full p-1 cursor-pointer transition-all">
+        <div className="flex transition-all items-center gap-6">
           <Link target="_self" href="/">
-            <div className="py-1 px-2 rounded-full transition-all bg-primary text-primary-foreground">
+            <div className="text-sm font-medium transition-colors duration-200 text-muted-foreground hover:text-foreground ">
               About
             </div>
           </Link>
           <Link target="_self" href="/blogs">
-            <div className="py-1 px-2 rounded-full transition-all bg-transparent text-foreground hover:bg-border hover:text-accent-foreground">
+            <div className="text-sm font-medium transition-colors duration-200 text-muted-foreground hover:text-foreground ">
               Blog
             </div>
           </Link>
           <Link target="_self" href="/about">
-            <div className="py-1 px-2 rounded-full transition-all bg-transparent text-foreground hover:bg-border hover:text-accent-foreground">
+            <div className="text-sm font-medium transition-colors duration-200 text-muted-foreground hover:text-foreground ">
               Video
             </div>
           </Link>
           <Link target="_self" href="/jobs">
-            <div className="py-1 px-2 rounded-full transition-all bg-transparent text-foreground hover:bg-border hover:text-accent-foreground">
+            <div className="text-sm font-medium transition-colors duration-200 text-muted-foreground hover:text-foreground ">
               Pomodoro
             </div>
           </Link>

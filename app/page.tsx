@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Page() {
     return (
-        <section className="container pt-28">
+        <section className="">
             <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight text-balance  ">
                 Soju
             </h1>
@@ -11,9 +11,8 @@ export default function Page() {
                 I design & code things on the web. This website is my digital garden, where I store the things I have been learning and love.
             </div>
 
-            <div className="relative -md-5 md:-mx-8">
+            <div className="relative  -mx-5 md:-mx-8">
                 <Image src="/bg-soju-1.png" alt="Profile" width={800} height={533} />
-
             </div>
 
 
