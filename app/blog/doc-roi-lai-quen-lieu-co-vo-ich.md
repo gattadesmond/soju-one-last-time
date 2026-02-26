@@ -3,7 +3,7 @@ title: 'Đọc rồi lại quên, liệu có vô ích?'
 url: "doc-roi-lai-quen-lieu-co-vo-ich"
 description: 'Có lần tôi thấy mình buồn: đọc một cuốn sách triết học rất hay, lúc đó hiểu rõ, nhưng rồi lại quên. Khi cần nhắc lại, tôi chẳng nhớ được bao nhiêu, thế là tôi tự chê trách bản thân. Có phải việc đọc của tôi trở nên vô ích?'
 pubDate: 'Aug 20 2025'
-heroImage: '/src/assets/images/suy-tu-bien-ca.png'
+heroImage: '/blog/suy-tu-bien-ca.png'
 ---
 
 Có lần tôi thấy mình buồn: đọc một cuốn sách triết học rất hay, lúc đó hiểu rõ, nhưng rồi lại quên. Khi cần nhắc lại, tôi chẳng nhớ được bao nhiêu, thế là tôi tự chê trách bản thân. Có phải việc đọc của tôi trở nên vô ích?

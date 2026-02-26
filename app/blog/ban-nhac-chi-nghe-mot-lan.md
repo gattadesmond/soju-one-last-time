@@ -3,7 +3,7 @@ title: 'Bản nhạc chỉ nghe một lần'
 url: "ban-nhac-chi-nghe-mot-lan"
 description: 'Một buổi chiều, hai người đi dạo bên bờ biển. Tôi tuổi vừa nghe một bài hát rất hay trên radio, nhưng tiếc vì không thể nghe lại được.'
 pubDate: 'Aug 16 2025'
-heroImage: '/src/assets/images/me-and-radio.png'
+heroImage: '/blog/me-and-radio.png'
 ---
 
 > Cái đẹp thường không nằm trong thứ ta sở hữu, mà trong khoảnh khắc ta buộc phải buông.

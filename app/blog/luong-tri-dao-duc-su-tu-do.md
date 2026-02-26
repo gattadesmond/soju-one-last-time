@@ -3,7 +3,7 @@ title: 'Lương Tri, Đạo Đức và Sự Tự Do'
 url: "luong-tri-dao-duc-su-tu-do"
 description: 'Lương tri có thể bắt nguồn từ tâm lý bầy đàn, nhưng khi một người dám sống theo nó dù không có phần thưởng, đó là sự dũng cảm của linh hồn.'
 pubDate: 'Aug 17 2025'
-heroImage: '/src/assets/images/thuyen-troi.png'
+heroImage: '/blog/thuyen-troi.png'
 ---
 
 > "Lương tri có thể bắt nguồn từ tâm lý bầy đàn, nhưng khi một người dám sống theo nó dù không có phần thưởng, đó là sự dũng cảm của linh hồn."

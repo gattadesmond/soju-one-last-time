@@ -6,7 +6,7 @@ description: Nếu một thực thể hoàn hảo từ lúc mới sinh (như cá
   người hữu hạn, mong manh và đầy khiếm khuyết mới có khả năng làm nên những
   điều vĩ đại.
 pubDate: 2026-01-07T00:40:00.000+07:00
-heroImage: /src/assets/images/loi-nguyen-cua-su-hoan-hao.jpg
+heroImage: /blog/loi-nguyen-cua-su-hoan-hao.jpg
 ---
 **Socrates**: Vincent, ta thấy cậu vừa chiến thắng trong cuộc thi bơi với em trai mình – người được tạo ra từ những ống nghiệm hoàn hảo nhất. Cậu đã thắng bằng cách nào, khi mà từng sợi DNA trong cơ thể cậu đều dự báo sự thất bại?
 

@@ -5,7 +5,7 @@ description: |-
   Không ai “xứng đáng” với những gì mình được trao,
   nhưng ai cũng chịu trách nhiệm với cách mình sống cùng chún
 pubDate: 2025-12-21T02:12:00.000+07:00
-heroImage: '/src/assets/images/doi-thoai-cong-bang.jpg'
+heroImage: '/blog/doi-thoai-cong-bang.jpg'
 ---
 **Glaucon:**
 

@@ -5,7 +5,7 @@ description: Mục tiêu không phải sợi dây trói, mà là ngọn lửa nh
   hồn không tắt. Một người có thể sống bằng cơm, nước và hơi thở — nhưng chỉ
   người có lý do để sống mới thật sự sống.
 pubDate: 2025-10-06T00:08:00.000+07:00
-heroImage: '/src/assets/images/muc-dich-song-1-1-.png'
+heroImage: '/blog/muc-dich-song-1-1-.png'
 ---
 **Người trẻ:**
 

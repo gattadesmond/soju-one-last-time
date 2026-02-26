@@ -3,7 +3,7 @@ title: 'Điều gì tạo nên một cuộc sống tốt đẹp'
 url: "dieu-gi-tao-nen-mot-cuoc-song-tot-dep"
 description: 'Giả sử vào giờ phút cuối cùng của cuộc đời, khi các phép màu sắp biến mất, bạn có cơ hội để suy ngẫm về những điều mình đã làm và chưa làm. Còn gì quan trọng hơn việc có thể nhìn lại mọi thứ và nói : "Tôi đã sống một cuộc đời tuyệt vời".'
 pubDate: 'Aug 16 2025'
-heroImage: '/src/assets/images/phut-giay-cam-nhan.png'
+heroImage: '/blog/phut-giay-cam-nhan.png'
 ---
 
 Giả sử vào giờ phút cuối cùng của cuộc đời, khi các phép màu sắp biến mất, bạn có cơ hội để suy ngẫm về những điều mình đã làm và chưa làm. Còn gì quan trọng hơn việc có thể nhìn lại mọi thứ và nói : "Tôi đã sống một cuộc đời tuyệt vời".

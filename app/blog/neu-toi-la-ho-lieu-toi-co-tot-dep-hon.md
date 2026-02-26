@@ -3,7 +3,7 @@ title: 'Nếu tôi là họ, liệu tôi có tốt đẹp hơn?'
 url: "neu-toi-la-ho-lieu-toi-co-tot-dep-hon"
 description: 'Khi chỉ nhìn bề ngoài, ta rất dễ kết luận vội vàng. Nhưng mỗi người đều có một câu chuyện mà ta chưa hề biết. Và đôi khi, một người "xấu xí" trước mắt mình đã từng là một tâm hồn rất đẹp — chỉ là cuộc đời đã quá tàn nhẫn với họ.'
 pubDate: 'Aug 30 2025'
-heroImage: '/src/assets/images/anh-mat-phan-xet.png'
+heroImage: '/blog/anh-mat-phan-xet.png'
 ---
 
 >Khi chỉ nhìn bề ngoài, ta rất dễ kết luận vội vàng.

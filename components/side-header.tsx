@@ -27,7 +27,7 @@ function SiteHeader() {
               About
             </div>
           </Link>
-          <Link target="_self" href="/blogs">
+          <Link target="_self" href="/blog">
             <div className="text-sm font-medium transition-colors duration-200 text-muted-foreground hover:text-foreground ">
               Blog
             </div>
