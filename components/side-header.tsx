@@ -32,7 +32,7 @@ function SiteHeader() {
               Blog
             </div>
           </Link>
-          <Link target="_self" href="/about">
+          <Link target="_self" href="/videos">
             <div className="text-sm font-medium transition-colors duration-200 text-muted-foreground hover:text-foreground ">
               Video
             </div>
