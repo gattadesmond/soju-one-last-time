@@ -1,6 +1,6 @@
 ---
 title: Bất tử và cái chết
-url: "bất-tử-và-cái-chết"
+url: "bat-tu-va-cai-chet"
 description: The Gods envy us because we're mortal, because any moment may be
   our last. Everything is more beautiful because we're doomed.
 pubDate: 2025-09-05T01:08:00.000+07:00

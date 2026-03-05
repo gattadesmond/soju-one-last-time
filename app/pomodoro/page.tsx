@@ -117,18 +117,7 @@ export default function PomodoroPage() {
       <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight text-balance">
         Pomodoro
       </h1>
-      <p className="text-muted-foreground mt-2">
-        Kỹ thuật quản lý thời gian: 25 phút tập trung, 5 phút nghỉ. Lấy cảm hứng từ{" "}
-        <a
-          href="https://pomofocus.io/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="underline hover:no-underline"
-        >
-          Pomofocus
-        </a>
-        .
-      </p>
+     
 
       {/* Mode tabs */}
       <div className="flex gap-2 mt-6">
