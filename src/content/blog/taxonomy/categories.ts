@@ -6,5 +6,6 @@ export const categories = [
   { title: 'Product', slug: { current: 'product' } },
   { title: 'Launchweek', slug: { current: 'launchweek' } },
   { title: 'AI', slug: { current: 'ai' } },
+  { title: 'Philosophy', slug: { current: 'philosophy' } },
   { title: 'Uncategorized', slug: { current: 'uncategorized' } },
 ];

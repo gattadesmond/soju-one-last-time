@@ -6,4 +6,5 @@ export const authors = [
   { id: 'michael', name: 'Michael Silva', photo: '/images/team/michael.jpg' },
   { id: 'oz', name: 'Oguzhan Olguncu', photo: '/images/team/oz.jpeg' },
   { id: 'meg', name: 'Meg Stepp', photo: '/images/team/meg.jpg' },
+  { id: 'soju', name: 'Soju', photo: '/images/placeholders/placeholder-author.svg' },
 ];
