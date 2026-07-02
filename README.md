@@ -1,36 +1,53 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Unkey Website
 
-## Getting Started
+## What is in this repository?
 
-First, run the development server:
+This repository contains the current Unkey website and its content, including:
+
+- marketing pages
+- blog
+- glossary
+- changelog
+- case studies
+- legal pages
+
+Routes live in `src/app`, UI components live in `src/components`, and most long-form content lives
+in `src/content`.
+
+## Running locally
+
+Requirements:
+
+- Node.js 20+
+- pnpm 11+
+
+Create a local env file and start the app:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
+cp .env.example .env
+pnpm install
 pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+The site will be available at `http://localhost:3000`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Useful commands:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+pnpm lint
+pnpm typecheck
+pnpm build
+```
 
-## Learn More
+## Important notes
 
-To learn more about Next.js, take a look at the following resources:
+- `NEXT_PUBLIC_DEFAULT_SITE_URL` is used for canonical URLs and sitemap generation.
+- Most content collections use MDX. If you are adding content, it is easiest to start by copying an
+  existing file from the same folder in `src/content`.
+- There is no dedicated test suite yet. Before opening a PR, run
+  `pnpm lint && pnpm typecheck && pnpm build`.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## How to contribute
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Follow our [contributing guide](https://engineering.unkey.com/contributing)
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
