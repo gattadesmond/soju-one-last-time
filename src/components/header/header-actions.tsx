@@ -1,17 +1,10 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { homeHeaderLinks } from '@/constants/home';
-
-import { useTrack } from '@/hooks/use-tracking';
 import { Link } from '@/components/ui/link';
-import { Icons } from '@/components/icons';
 
 export default function HeaderActions() {
-  const track = useTrack();
   const [onLightSection, setOnLightSection] = useState(false);
-  const [discordLink, githubLink] = homeHeaderLinks.social;
-  const [loginLink, signUpLink] = homeHeaderLinks.auth;
 
   useEffect(() => {
     const lightSections = document.querySelectorAll<HTMLElement>('[data-header-theme="light"]');
@@ -35,43 +28,15 @@ export default function HeaderActions() {
   }, []);
 
   return (
-    <nav aria-label="Actions" className="hidden items-center gap-16 lg:flex">
-      <div className="flex items-center gap-1">
-        <Link href={discordLink.href} size="small" target="_blank" rel="noopener noreferrer">
-          {discordLink.label}
-        </Link>
-        <Link
-          href={githubLink.href}
-          size="small"
-          className="gap-1 [&_svg]:size-4.5"
-          aria-label={`${githubLink.label} repository (${githubLink.metric} stars)`}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Icons.github className="text-background" size={18} aria-hidden="true" />
-          <span className="sr-only">{githubLink.label}</span>
-          <span>{githubLink.metric}</span>
-        </Link>
-      </div>
-
-      <div className="flex items-center gap-1">
-        <Link
-          href={loginLink.href}
-          variant={onLightSection ? 'primaryBlack' : 'secondary'}
-          size="small"
-          className="bg-background transition-colors duration-300"
-          onClick={() => track('signin', { location: 'navigation' })}
-        >
-          {loginLink.label}
-        </Link>
-        <Link
-          href={signUpLink.href}
-          size="small"
-          onClick={() => track('signup', { location: 'navigation' })}
-        >
-          {signUpLink.label}
-        </Link>
-      </div>
+    <nav aria-label="Actions" className="hidden items-center lg:flex">
+      <Link
+        href="/about"
+        variant={onLightSection ? 'primaryBlack' : 'primary'}
+        size="small"
+        className="transition-colors duration-300"
+      >
+        Xem thêm
+      </Link>
     </nav>
   );
 }

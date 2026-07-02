@@ -4,40 +4,9 @@ import type { IFooterMenuSection, IMenuSocialItem } from '@/types/common';
 
 export const MENUS = {
   header: [
-    {
-      label: 'Resources',
-      href: '/',
-      children: [
-        {
-          label: 'Blog',
-          href: '/blog',
-          description: 'Read product updates and insights',
-          icon: '/icons/header/blog.svg',
-        },
-        /*
-        {
-          label: 'Case studies',
-          href: '/case-studies',
-          description: 'Practical results from real deployments',
-          icon: '/icons/header/case-studies.svg',
-        },
-        */
-        {
-          label: 'Changelog',
-          href: '/changelog',
-          description: 'Track what shipped, improved, and fixed',
-          icon: '/icons/header/changelog.svg',
-        },
-        {
-          label: 'Glossary',
-          href: '/glossary',
-          description: 'Clear definitions for API terms',
-          icon: '/icons/header/glossary.svg',
-        },
-      ],
-    },
-    { label: 'Pricing', href: '/pricing' },
-    { label: 'Docs', href: 'https://unkey.com/docs/introduction' },
+    { label: 'Blog', href: '/blog' },
+    { label: 'About', href: '/about' },
+    { label: 'Video', href: '/video' },
   ],
   footer: {
     description: 'Build better APIs faster',
