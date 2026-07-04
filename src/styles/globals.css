@@ -1,6 +1,6 @@
 @import 'tailwindcss';
-@plugin "@tailwindcss/typography";
-@plugin "../../tailwind.plugins.mjs";
+@plugin '@tailwindcss/typography';
+@plugin '../../tailwind.plugins.mjs';
 
 @import 'tw-animate-css';
 
@@ -61,7 +61,7 @@
   --font-sans:
     var(--font-inter), ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
     'Segoe UI Symbol', 'Noto Color Emoji';
-  --font-display: articulat-cf, articulat-cf-fallback, sans-serif;
+  --font-display: var(--font-crimson-text), Georgia, serif;
   --font-mono:
     var(--font-jetbrains-mono), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
     'Liberation Mono', 'Courier New', monospace;
@@ -168,13 +168,11 @@
 }
 
 @utility font-display {
-  font-family: articulat-cf, articulat-cf-fallback, sans-serif;
-  font-feature-settings: 'ss02' 1;
+  font-family: var(--font-crimson-text), Georgia, serif;
 }
 
 @utility font-display-secondary {
-  font-family: articulat-cf, articulat-cf-fallback, sans-serif;
-  font-feature-settings: 'ss01' 1;
+  font-family: var(--font-crimson-text), Georgia, serif;
 }
 
 @utility font-label {

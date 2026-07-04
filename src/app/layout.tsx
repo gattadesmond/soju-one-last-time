@@ -2,7 +2,7 @@ import type { ReactNode } from 'react';
 
 import '@/styles/globals.css';
 
-import { Inter, JetBrains_Mono } from 'next/font/google';
+import { Crimson_Text, Inter, JetBrains_Mono } from 'next/font/google';
 
 import { ConsentProvider } from '@/components/consent-provider';
 import { ConsentBanner } from '@/components/cookie-banner/consent-banner';
@@ -18,6 +18,12 @@ const jetbrainsMono = JetBrains_Mono({
   weight: ['400', '500'],
   subsets: ['latin'],
   variable: '--font-jetbrains-mono',
+});
+
+const crimsonText = Crimson_Text({
+  weight: ['400', '600', '700'],
+  subsets: ['latin', 'vietnamese'],
+  variable: '--font-crimson-text',
 });
 
 export default function RootLayout({
@@ -41,7 +47,7 @@ export default function RootLayout({
         <link rel="stylesheet" href="https://use.typekit.net/tcb4uyw.css" />
       </head>
       <body
-        className={`bg-background ${inter.variable} ${jetbrainsMono.variable} font-sans antialiased`}
+        className={`bg-background ${inter.variable} ${jetbrainsMono.variable} ${crimsonText.variable} font-sans antialiased`}
       >
         <ConsentProvider>
           {children}

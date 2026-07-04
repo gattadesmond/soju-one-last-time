@@ -1,6 +1,10 @@
 .prose {
   @apply tracking-tight text-foreground;
 
+  & :where(h1, h2, h3, h4, h5, h6) {
+    font-family: var(--font-crimson-text), Georgia, serif;
+  }
+
   @apply prose-headings:text-3xl prose-headings:font-semibold prose-headings:text-foreground;
 
   @apply prose-p:text-lg prose-p:font-normal prose-p:text-gray-80;
@@ -392,8 +396,7 @@
 
   h2 {
     @apply mt-14;
-    font-family: articulat-cf, sans-serif;
-    font-feature-settings: 'ss01' 1;
+    font-family: var(--font-crimson-text), Georgia, serif;
   }
 
   h2 + p,
