@@ -44,27 +44,33 @@ function AccordionTrigger({
     <Accordion.Header className="flex">
       <Accordion.Trigger
         data-slot="accordion-trigger"
-        className={cn(
-          'group flex flex-1 items-center justify-between rounded py-4 text-left text-sm font-medium transition-all hover:underline',
-          !hasCustomIcons && '[&[data-panel-open]>svg]:rotate-180',
-          className,
-        )}
         {...props}
-      >
-        {children}
-        {hasCustomIcons ? (
-          <span className="relative flex size-6 shrink-0 items-center justify-center text-foreground">
-            <span className="group-data-closed:block group-data-open:hidden">
-              {iconClosed}
-            </span>
-            <span className="absolute inset-0 flex items-center justify-center group-data-closed:hidden group-data-open:block">
-              {iconOpen}
-            </span>
-          </span>
-        ) : (
-          defaultIcon
+        render={(renderProps, state) => (
+          <button
+            {...renderProps}
+            data-state={state.open ? 'open' : 'closed'}
+            className={cn(
+              'group flex flex-1 items-center justify-between rounded py-4 text-left text-sm font-medium transition-all hover:underline',
+              !hasCustomIcons && '[&[data-state=open]>svg]:rotate-180',
+              className,
+            )}
+          >
+            {children}
+            {hasCustomIcons ? (
+              <span className="relative flex size-6 shrink-0 items-center justify-center text-foreground">
+                <span className="group-data-[state=closed]:block group-data-[state=open]:hidden">
+                  {iconClosed}
+                </span>
+                <span className="absolute inset-0 flex items-center justify-center group-data-[state=closed]:hidden group-data-[state=open]:block">
+                  {iconOpen}
+                </span>
+              </span>
+            ) : (
+              defaultIcon
+            )}
+          </button>
         )}
-      </Accordion.Trigger>
+      />
     </Accordion.Header>
   );
 }
@@ -77,11 +83,17 @@ function AccordionContent({
   return (
     <Accordion.Panel
       data-slot="accordion-content"
-      className="overflow-hidden text-sm data-closed:animate-accordion-up data-open:animate-accordion-down"
       {...props}
-    >
-      <div className={cn('pt-0 pb-4', className)}>{children}</div>
-    </Accordion.Panel>
+      render={(renderProps, state) => (
+        <div
+          {...renderProps}
+          data-state={state.open ? 'open' : 'closed'}
+          className="overflow-hidden text-sm data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down"
+        >
+          <div className={cn('pt-0 pb-4', className)}>{children}</div>
+        </div>
+      )}
+    />
   );
 }
 

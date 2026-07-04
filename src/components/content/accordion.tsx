@@ -32,8 +32,8 @@ interface AccordionItemProps {
 export function AccordionItem({ label, value, icon, children, className }: AccordionItemProps) {
   return (
     <AccordionItemUI className={cn(className)} value={value}>
-      <AccordionTriggerUI className="not-prose group flex items-center justify-start gap-x-3 rounded-2xl p-4 leading-normal text-secondary-foreground ring-inset hover:text-foreground hover:no-underline focus-visible:ring-offset-8 focus-visible:duration-0 data-[panel-open]:text-foreground [&>svg]:hidden">
-        <div className="transform-origin-center text-sm transition-transform duration-150 group-data-[panel-open]:rotate-90 before:text-xs before:content-['▶']" />
+      <AccordionTriggerUI className="not-prose group flex items-center justify-start gap-x-3 rounded-2xl p-4 leading-normal text-secondary-foreground ring-inset hover:text-foreground hover:no-underline focus-visible:ring-offset-8 focus-visible:duration-0 data-[state=open]:text-foreground [&>svg]:hidden">
+        <div className="transform-origin-center text-sm transition-transform duration-150 group-data-[state=open]:rotate-90 before:text-xs before:content-['▶']" />
         {icon && (
           <Image
             // TODO: Add dark mode support
