@@ -59,9 +59,8 @@
   --color-gray-5: #0b0c0e;
 
   --font-sans:
-    var(--font-inter), ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
-    'Segoe UI Symbol', 'Noto Color Emoji';
-  --font-display: var(--font-crimson-text), Georgia, serif;
+    var(--font-literata), Georgia, serif;
+  --font-display: var(--font-ibm-plex-sans), sans-serif;
   --font-mono:
     var(--font-jetbrains-mono), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
     'Liberation Mono', 'Courier New', monospace;
@@ -168,11 +167,11 @@
 }
 
 @utility font-display {
-  font-family: var(--font-crimson-text), Georgia, serif;
+  font-family: var(--font-ibm-plex-sans), sans-serif;
 }
 
 @utility font-display-secondary {
-  font-family: var(--font-crimson-text), Georgia, serif;
+  font-family: var(--font-ibm-plex-sans), sans-serif;
 }
 
 @utility font-label {

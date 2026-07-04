@@ -2,16 +2,16 @@ import type { ReactNode } from 'react';
 
 import '@/styles/globals.css';
 
-import { Crimson_Text, Inter, JetBrains_Mono } from 'next/font/google';
+import { IBM_Plex_Sans, JetBrains_Mono, Literata } from 'next/font/google';
 
 import { ConsentProvider } from '@/components/consent-provider';
 import { ConsentBanner } from '@/components/cookie-banner/consent-banner';
 import { Tracking } from '@/components/tracking';
 
-const inter = Inter({
-  weight: ['400', '500', '600'],
-  subsets: ['latin'],
-  variable: '--font-inter',
+const literata = Literata({
+  weight: ['400', '500', '600', '700'],
+  subsets: ['latin', 'vietnamese'],
+  variable: '--font-literata',
 });
 
 const jetbrainsMono = JetBrains_Mono({
@@ -20,10 +20,10 @@ const jetbrainsMono = JetBrains_Mono({
   variable: '--font-jetbrains-mono',
 });
 
-const crimsonText = Crimson_Text({
-  weight: ['400', '600', '700'],
+const ibmPlexSans = IBM_Plex_Sans({
+  weight: ['400', '500', '600', '700'],
   subsets: ['latin', 'vietnamese'],
-  variable: '--font-crimson-text',
+  variable: '--font-ibm-plex-sans',
 });
 
 export default function RootLayout({
@@ -47,7 +47,7 @@ export default function RootLayout({
         <link rel="stylesheet" href="https://use.typekit.net/tcb4uyw.css" />
       </head>
       <body
-        className={`bg-background ${inter.variable} ${jetbrainsMono.variable} ${crimsonText.variable} font-sans antialiased`}
+        className={`bg-background ${literata.variable} ${jetbrainsMono.variable} ${ibmPlexSans.variable} font-sans antialiased`}
       >
         <ConsentProvider>
           {children}
