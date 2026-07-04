@@ -110,6 +110,6 @@ export function readAndParseMarkdown<T>(filePath: string): TMarkdownDataResponse
     };
   } catch (error) {
     console.error(`Error reading markdown file: ${filePath}`, error);
-    throw new Error(`Failed to read markdown file: ${filePath}`);
+    throw new Error(`Failed to read markdown file: ${filePath}`, { cause: error });
   }
 }
