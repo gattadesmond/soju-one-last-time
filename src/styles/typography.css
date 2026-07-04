@@ -1,5 +1,5 @@
 .prose {
-  @apply tracking-tight text-foreground;
+  @apply text-foreground;
 
   & :where(h1, h2, h3, h4, h5, h6) {
     font-family: var(--font-ibm-plex-sans), sans-serif;
@@ -9,13 +9,13 @@
 
   @apply prose-p:text-lg prose-p:font-normal prose-p:text-gray-80;
 
-  @apply prose-h2:mt-11 prose-h2:mb-4 prose-h2:scroll-mt-8 prose-h2:text-2xl prose-h2:leading-tight prose-h2:font-normal prose-h2:tracking-tight md:prose-h2:mt-14 md:prose-h2:text-3xl md:prose-h2:leading-tight;
+  @apply prose-h2:mt-11 prose-h2:mb-4 prose-h2:scroll-mt-8 prose-h2:text-2xl prose-h2:leading-tight prose-h2:font-normal md:prose-h2:mt-14 md:prose-h2:text-3xl md:prose-h2:leading-tight;
 
-  @apply prose-h3:mt-8 prose-h3:mb-3 prose-h3:scroll-mt-6 prose-h3:text-xl prose-h3:leading-snug prose-h3:font-medium prose-h3:tracking-tight prose-h3:text-foreground;
+  @apply prose-h3:mt-8 prose-h3:mb-3 prose-h3:scroll-mt-6 prose-h3:text-xl prose-h3:leading-snug prose-h3:font-medium prose-h3:text-foreground;
 
-  @apply prose-h4:mt-6 prose-h4:mb-2.5 prose-h4:text-lg prose-h4:font-medium prose-h4:tracking-tight;
+  @apply prose-h4:mt-6 prose-h4:mb-2.5 prose-h4:text-lg prose-h4:font-medium;
 
-  @apply prose-p:my-4 prose-p:overflow-x-auto prose-p:leading-normal prose-p:tracking-tight;
+  @apply prose-p:my-4 prose-p:overflow-x-auto prose-p:leading-normal;
 
   @apply prose-a:rounded-sm prose-a:font-normal prose-a:break-words prose-a:text-foreground prose-a:underline prose-a:decoration-gray-40 prose-a:decoration-dashed prose-a:decoration-[1px] prose-a:underline-offset-[0.26em] prose-a:transition-colors prose-a:duration-300 prose-a:hover:text-foreground/85 prose-a:hover:decoration-gray-70;
 
@@ -25,7 +25,7 @@
 
   @apply prose-ol:my-6 prose-ol:gap-y-2.5 prose-ol:pl-11 md:prose-ol:pl-11;
 
-  @apply prose-li:m-0 prose-li:text-lg prose-li:leading-normal prose-li:tracking-tight prose-li:text-gray-80;
+  @apply prose-li:m-0 prose-li:text-lg prose-li:leading-normal prose-li:text-gray-80;
 
   @apply prose-strong:font-normal prose-strong:text-foreground;
 
@@ -136,7 +136,7 @@
     @apply my-8;
 
     summary {
-      @apply cursor-pointer rounded text-base leading-snug font-medium tracking-tight text-foreground normal-case outline-offset-4 transition-colors duration-300 hover:text-secondary-foreground/85;
+      @apply cursor-pointer rounded text-base leading-snug font-medium text-foreground normal-case outline-offset-4 transition-colors duration-300 hover:text-secondary-foreground/85;
     }
 
     summary + * {
@@ -155,11 +155,11 @@
       @apply min-w-[min(46rem,100%)] border-separate border-spacing-0 px-5 md:min-w-full md:px-0;
 
       & th {
-        @apply min-w-36 border-b border-border pr-10 pb-1.5 text-left align-top text-sm leading-snug font-medium tracking-tight text-foreground;
+        @apply min-w-36 border-b border-border pr-10 pb-1.5 text-left align-top text-sm leading-snug font-medium text-foreground;
       }
 
       & td {
-        @apply min-w-36 border-b border-border pt-3 pr-10 pb-3 text-left align-top text-sm leading-snug tracking-tight text-gray-80/90;
+        @apply min-w-36 border-b border-border pt-3 pr-10 pb-3 text-left align-top text-sm leading-snug text-gray-80/90;
       }
 
       & th:last-child,
@@ -230,7 +230,7 @@
 
   :not(pre) {
     > code {
-      @apply mx-1 inline-flex max-w-full overflow-x-auto rounded border border-border bg-muted/40 px-1 pt-[1px] pb-[1px] text-sm font-normal tracking-tight text-foreground before:hidden after:hidden;
+      @apply mx-1 inline-flex max-w-full overflow-x-auto rounded border border-border bg-muted/40 px-1 pt-[1px] pb-[1px] text-sm font-normal text-foreground before:hidden after:hidden;
 
       &:not(:first-child) {
         @apply ml-[0.1875rem];
@@ -280,7 +280,7 @@
     }
 
     p {
-      @apply my-2.5 text-base leading-snug tracking-tight;
+      @apply my-2.5 text-base leading-snug;
     }
 
     ol,
@@ -291,7 +291,7 @@
     ol,
     ul {
       li {
-        @apply text-base leading-snug tracking-tight before:top-2.5 before:-left-5;
+        @apply text-base leading-snug before:top-2.5 before:-left-5;
       }
     }
   }
@@ -342,7 +342,7 @@
 
   ol strong,
   ul strong {
-    @apply font-normal tracking-tight text-foreground;
+    @apply font-normal text-foreground;
   }
 
   ol a,
@@ -406,5 +406,5 @@
 }
 
 .prose-lg {
-  @apply text-base tracking-tight md:text-lg md:leading-normal;
+  @apply text-base md:text-lg md:leading-normal;
 }

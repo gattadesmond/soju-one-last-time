@@ -65,6 +65,9 @@
     var(--font-jetbrains-mono), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
     'Liberation Mono', 'Courier New', monospace;
 
+  --tracking-tight: 0em;
+  --tracking-tighter: 0em;
+
   /* ui/dialog, ui/drawer, ui/search-dialog, ui/select, content/video, content/code-block-wrapper */
   --color-popover: hsl(240 10% 3.9%);
   --color-popover-foreground: hsl(0 0% 98%);
