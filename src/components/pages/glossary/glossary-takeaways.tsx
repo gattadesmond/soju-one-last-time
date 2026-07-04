@@ -66,9 +66,7 @@ function GlossaryTakeaways({ className, takeaways }: IGlossaryTakeawaysProps) {
 
   return (
     <Accordion
-      type="single"
-      collapsible
-      defaultValue={defaultValue}
+      defaultValue={defaultValue !== undefined ? [defaultValue] : undefined}
       className={cn('not-prose border border-gray-20', className)}
     >
       {hasDefinitionAndStructure ? (

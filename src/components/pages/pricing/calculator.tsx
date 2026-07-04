@@ -103,12 +103,10 @@ function FieldLabel({
       >
         {children}
       </label>
-      <Tooltip>
-        <TooltipTrigger asChild>
-          <button type="button" className="inline-flex shrink-0 rounded-sm">
+        <Tooltip>
+        <TooltipTrigger render={<button type="button" className="inline-flex shrink-0 rounded-sm" />}>
             <Info className="size-3.5 text-muted-foreground" />
             <span className="sr-only">{tooltip}</span>
-          </button>
         </TooltipTrigger>
         <TooltipContent side="top" className="max-w-56 bg-foreground text-background">
           {tooltip}

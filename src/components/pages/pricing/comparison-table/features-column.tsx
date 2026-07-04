@@ -87,11 +87,9 @@ const FeaturesColumn = memo(function FeaturesColumn({
                   {tooltip && (
                     <TooltipProvider>
                       <Tooltip>
-                        <TooltipTrigger asChild>
-                          <span className="relative -top-px inline-flex items-center pb-0.5 leading-none">
+                        <TooltipTrigger render={<span className="relative -top-px inline-flex items-center pb-0.5 leading-none" />}>
                             <Info className="size-3.5 text-muted-foreground/60" />
-                          </span>
-                        </TooltipTrigger>
+                          </TooltipTrigger>
                         <TooltipContent className="bg-foreground text-background">
                           <p>{tooltip}</p>
                         </TooltipContent>

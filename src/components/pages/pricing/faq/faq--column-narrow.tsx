@@ -25,7 +25,7 @@ function Faq({ title, className, items }: IFaqProps) {
             {title}
           </h2>
         )}
-        <Accordion type="single" collapsible className="border-y border-border text-foreground">
+        <Accordion className="border-y border-border text-foreground">
           {items.map(({ question, answer }, index) => (
             <AccordionItem key={index} value={`item-${index}`} className="relative">
               <AccordionTrigger

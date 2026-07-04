@@ -1,7 +1,7 @@
 'use client';
 
 import * as React from 'react';
-import * as TooltipPrimitive from '@radix-ui/react-tooltip';
+import { Tooltip } from '@base-ui/react/tooltip';
 
 import { cn } from '@/lib/utils';
 
@@ -35,36 +35,36 @@ function useIsCoarsePointer() {
 }
 
 function TooltipProvider({
-  delayDuration = 0,
+  delay = 0,
   ...props
-}: React.ComponentProps<typeof TooltipPrimitive.Provider>) {
+}: Tooltip.Provider.Props) {
   return (
-    <TooltipPrimitive.Provider
+    <Tooltip.Provider
       data-slot="tooltip-provider"
-      delayDuration={delayDuration}
+      delay={delay}
       {...props}
     />
   );
 }
 
-function Tooltip({
+function TooltipRoot({
   open: controlledOpen,
   onOpenChange: controlledOnOpenChange,
   ...props
-}: React.ComponentProps<typeof TooltipPrimitive.Root>) {
+}: Tooltip.Root.Props) {
   const isCoarsePointer = useIsCoarsePointer();
   const [open, setOpen] = React.useState(false);
   const isControlled = controlledOpen !== undefined;
   const canToggleOnClick = isCoarsePointer && !isControlled;
 
   const rootProps = canToggleOnClick
-    ? { open, onOpenChange: setOpen }
+    ? { open, onOpenChange: setOpen as Tooltip.Root.Props['onOpenChange'] }
     : { open: controlledOpen, onOpenChange: controlledOnOpenChange };
 
   return (
     <TooltipProvider>
       <TooltipContext.Provider value={{ canToggleOnClick, setOpen }}>
-        <TooltipPrimitive.Root data-slot="tooltip" {...rootProps} {...props} />
+        <Tooltip.Root data-slot="tooltip" {...rootProps} {...props} />
       </TooltipContext.Provider>
     </TooltipProvider>
   );
@@ -73,11 +73,11 @@ function Tooltip({
 function TooltipTrigger({
   onClick,
   ...props
-}: React.ComponentProps<typeof TooltipPrimitive.Trigger>) {
+}: Tooltip.Trigger.Props) {
   const tooltipContext = React.useContext(TooltipContext);
 
   return (
-    <TooltipPrimitive.Trigger
+    <Tooltip.Trigger
       data-slot="tooltip-trigger"
       onClick={(event) => {
         onClick?.(event);
@@ -97,23 +97,27 @@ function TooltipContent({
   className,
   sideOffset = 4,
   children,
+  side,
+  align,
+  alignOffset,
   ...props
-}: React.ComponentProps<typeof TooltipPrimitive.Content>) {
+}: Tooltip.Popup.Props & Pick<Tooltip.Positioner.Props, 'side' | 'align' | 'alignOffset' | 'sideOffset'>) {
   return (
-    <TooltipPrimitive.Portal>
-      <TooltipPrimitive.Content
-        data-slot="tooltip-content"
-        sideOffset={sideOffset}
-        className={cn(
-          'z-50 inline-block w-max max-w-72 origin-(--radix-tooltip-content-transform-origin) animate-in bg-primary px-3 py-1.5 text-xs break-words whitespace-normal text-primary-foreground fade-in-0 zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-95 lg:max-w-none',
-          className,
-        )}
-        {...props}
-      >
-        {children}
-      </TooltipPrimitive.Content>
-    </TooltipPrimitive.Portal>
+    <Tooltip.Portal>
+      <Tooltip.Positioner sideOffset={sideOffset} side={side} align={align} alignOffset={alignOffset}>
+        <Tooltip.Popup
+          data-slot="tooltip-content"
+          className={cn(
+            'z-50 inline-block w-max max-w-72 origin-(--transform-origin) animate-in bg-primary px-3 py-1.5 text-xs break-words whitespace-normal text-primary-foreground fade-in-0 zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 data-closed:animate-out data-closed:fade-out-0 data-closed:zoom-out-95 lg:max-w-none',
+            className,
+          )}
+          {...props}
+        >
+          {children}
+        </Tooltip.Popup>
+      </Tooltip.Positioner>
+    </Tooltip.Portal>
   );
 }
 
-export { Tooltip, TooltipTrigger, TooltipContent, TooltipProvider };
+export { TooltipRoot as Tooltip, TooltipTrigger, TooltipContent, TooltipProvider };

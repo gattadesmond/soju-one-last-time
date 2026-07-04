@@ -59,17 +59,18 @@ function SearchBar({
 
   return (
     <Dialog open={open} onOpenChange={setOpen}>
-      <DialogTrigger asChild>
-        <Button
-          variant="outline"
-          aria-label="Search"
-          className={cn(
-            'relative !h-12 w-full justify-start rounded-lg border border-input bg-muted/50 px-2 text-sm font-normal text-muted-foreground shadow-none hover:bg-muted md:!h-8 lg:!h-9 lg:pl-2.5 [&_svg]:size-4',
-            className,
-          )}
-          size="sm"
-          {...props}
-        >
+      <DialogTrigger
+        render={
+          <button
+            aria-label="Search"
+            className={cn(
+              'relative inline-flex h-12 w-full items-center justify-start gap-1 rounded-lg border border-input bg-muted/50 px-2 text-sm font-normal text-muted-foreground shadow-none whitespace-nowrap hover:bg-muted md:h-8 lg:h-9 lg:pl-2.5 [&_svg]:size-4',
+              className,
+            )}
+            {...props}
+          />
+        }
+      >
           <Search />
           <span className="mr-auto ml-2 inline-flex text-[0.8125rem] font-normal">
             {placeholder}
@@ -79,7 +80,6 @@ function SearchBar({
               <span className="text-base">⌘</span>K
             </kbd>
           )}
-        </Button>
       </DialogTrigger>
       <SearchDialog open={open} searchItems={searchItems} suggestions={suggestions} />
     </Dialog>

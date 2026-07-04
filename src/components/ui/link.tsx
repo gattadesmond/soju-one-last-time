@@ -1,7 +1,8 @@
 import * as React from 'react';
 import type { Route } from 'next';
 import NextLink from 'next/link';
-import { Slot } from '@radix-ui/react-slot';
+import { mergeProps } from '@base-ui/react/merge-props';
+import { useRender } from '@base-ui/react/use-render';
 import { cva, type VariantProps } from 'class-variance-authority';
 
 import { cn } from '@/lib/utils';
@@ -35,19 +36,30 @@ const linkVariants = cva(
 export interface LinkProps<T extends string = string>
   extends Omit<React.AnchorHTMLAttributes<HTMLAnchorElement>, 'href'>,
     VariantProps<typeof linkVariants> {
-  asChild?: boolean;
+  render?: React.ReactElement | ((props: React.ComponentProps<'a'>, state: object) => React.ReactElement);
   href: string | URL | Route<T>;
 }
 
 const Link = React.forwardRef<HTMLAnchorElement, LinkProps<string>>(
-  ({ className, variant, size, asChild = false, href, ...props }, ref) => {
-    const Comp = asChild ? Slot : 'a';
+  ({ className, variant, size, render, href, ...props }, ref) => {
+    const classes = cn(linkVariants({ variant, size, className }));
     const isInternalLink = typeof href === 'string' && href.startsWith('/');
+
+    if (render) {
+      return useRender({
+        defaultTagName: 'a' as const,
+        render,
+        props: mergeProps(
+          { 'data-slot': 'link', className: classes, href: href.toString() } as React.ComponentProps<'a'>,
+          props as React.ComponentProps<'a'>,
+        ),
+      });
+    }
 
     if (isInternalLink) {
       return (
         <NextLink
-          className={cn(linkVariants({ variant, size, className }))}
+          className={classes}
           href={href}
           ref={ref}
           {...props}
@@ -56,8 +68,8 @@ const Link = React.forwardRef<HTMLAnchorElement, LinkProps<string>>(
     }
 
     return (
-      <Comp
-        className={cn(linkVariants({ variant, size, className }))}
+      <a
+        className={classes}
         href={href.toString()}
         ref={ref}
         {...props}

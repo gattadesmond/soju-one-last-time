@@ -2,12 +2,10 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import { Slot } from '@radix-ui/react-slot';
 import { Info } from 'lucide-react';
-
 import { IPricingPlan, IPricingPlanTier } from '@/types/pricing';
 import { cn } from '@/lib/utils';
-import { Button } from '@/components/ui/button';
+import { Button, buttonVariants } from '@/components/ui/button';
 import {
   Select,
   SelectContent,
@@ -105,9 +103,9 @@ function PricingCard({
             className="bg-card flex size-12 items-center justify-center rounded-full"
             aria-hidden
           >
-            <Slot className="size-5">
+            <span className="size-5">
               <DynamicIcon icon={lucideIcon} />
-            </Slot>
+            </span>
           </span>
         )}
         <div
@@ -188,16 +186,16 @@ function PricingCard({
         </div>
       </div>
 
-      <Button
+      <Link
+        href={link.href}
         className={cn(
+          buttonVariants({ variant: 'secondary' }),
           'h-11 w-full rounded-none text-base leading-none',
           showDescriptionAfterButton ? 'row-start-3 mt-5' : 'row-start-4 mt-5',
         )}
-        variant="secondary"
-        asChild
       >
-        <Link href={link.href}>{link.label}</Link>
-      </Button>
+        {link.label}
+      </Link>
 
       {features.items.length > 0 && (
         <div
@@ -213,9 +211,9 @@ function PricingCard({
               return (
                 <li key={index} className="flex items-start text-sm">
                   {lucideIcon && (
-                    <Slot className="mt-0.5 mr-2 size-3.5 shrink-0 text-foreground/80">
+                    <span className="mt-0.5 mr-2 size-3.5 shrink-0 text-foreground/80">
                       <DynamicIcon icon={lucideIcon} />
-                    </Slot>
+                    </span>
                   )}
                   <span className="text-base leading-tight tracking-[-0.01em] text-foreground/80">
                     {label}
@@ -223,11 +221,9 @@ function PricingCard({
                   {tooltip && (
                     <TooltipProvider>
                       <Tooltip>
-                        <TooltipTrigger asChild>
-                          <span className="ml-1.5 cursor-pointer" aria-label={tooltip}>
+                        <TooltipTrigger render={<span className="ml-1.5 cursor-pointer" aria-label={tooltip} />}>
                             <Info className="size-3.5 text-muted-foreground" />
-                          </span>
-                        </TooltipTrigger>
+                          </TooltipTrigger>
                         <TooltipContent className="bg-foreground text-background">
                           <p>{tooltip}</p>
                         </TooltipContent>

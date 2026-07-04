@@ -1,21 +1,21 @@
 'use client';
 
 import * as React from 'react';
-import * as AccordionPrimitive from '@radix-ui/react-accordion';
+import { Accordion } from '@base-ui/react/accordion';
 import { ChevronDown } from 'lucide-react';
 
 import { cn } from '@/lib/utils';
 
-function Accordion({ ...props }: React.ComponentProps<typeof AccordionPrimitive.Root>) {
-  return <AccordionPrimitive.Root data-slot="accordion" {...props} />;
+function AccordionRoot({ ...props }: Accordion.Root.Props) {
+  return <Accordion.Root data-slot="accordion" {...props} />;
 }
 
 function AccordionItem({
   className,
   ...props
-}: React.ComponentProps<typeof AccordionPrimitive.Item>) {
+}: Accordion.Item.Props) {
   return (
-    <AccordionPrimitive.Item
+    <Accordion.Item
       data-slot="accordion-item"
       className={cn('border-b last:border-b-0', className)}
       {...props}
@@ -23,7 +23,7 @@ function AccordionItem({
   );
 }
 
-interface IAccordionTriggerProps extends React.ComponentProps<typeof AccordionPrimitive.Trigger> {
+interface IAccordionTriggerProps extends Accordion.Trigger.Props {
   iconClosed?: React.ReactNode;
   iconOpen?: React.ReactNode;
 }
@@ -41,12 +41,12 @@ function AccordionTrigger({
   );
 
   return (
-    <AccordionPrimitive.Header className="flex">
-      <AccordionPrimitive.Trigger
+    <Accordion.Header className="flex">
+      <Accordion.Trigger
         data-slot="accordion-trigger"
         className={cn(
           'group flex flex-1 items-center justify-between rounded py-4 text-left text-sm font-medium transition-all hover:underline',
-          !hasCustomIcons && '[&[data-state=open]>svg]:rotate-180',
+          !hasCustomIcons && '[&[data-panel-open]>svg]:rotate-180',
           className,
         )}
         {...props}
@@ -54,18 +54,18 @@ function AccordionTrigger({
         {children}
         {hasCustomIcons ? (
           <span className="relative flex size-6 shrink-0 items-center justify-center text-foreground">
-            <span className="group-data-[state=closed]:block group-data-[state=open]:hidden">
+            <span className="group-data-closed:block group-data-open:hidden">
               {iconClosed}
             </span>
-            <span className="absolute inset-0 flex items-center justify-center group-data-[state=closed]:hidden group-data-[state=open]:block">
+            <span className="absolute inset-0 flex items-center justify-center group-data-closed:hidden group-data-open:block">
               {iconOpen}
             </span>
           </span>
         ) : (
           defaultIcon
         )}
-      </AccordionPrimitive.Trigger>
-    </AccordionPrimitive.Header>
+      </Accordion.Trigger>
+    </Accordion.Header>
   );
 }
 
@@ -73,16 +73,16 @@ function AccordionContent({
   className,
   children,
   ...props
-}: React.ComponentProps<typeof AccordionPrimitive.Content>) {
+}: Accordion.Panel.Props) {
   return (
-    <AccordionPrimitive.Content
+    <Accordion.Panel
       data-slot="accordion-content"
-      className="overflow-hidden text-sm data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down"
+      className="overflow-hidden text-sm data-closed:animate-accordion-up data-open:animate-accordion-down"
       {...props}
     >
       <div className={cn('pt-0 pb-4', className)}>{children}</div>
-    </AccordionPrimitive.Content>
+    </Accordion.Panel>
   );
 }
 
-export { Accordion, AccordionItem, AccordionTrigger, AccordionContent };
+export { AccordionRoot as Accordion, AccordionItem, AccordionTrigger, AccordionContent };

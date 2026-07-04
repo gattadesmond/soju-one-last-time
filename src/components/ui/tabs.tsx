@@ -1,19 +1,19 @@
 'use client';
 
 import * as React from 'react';
-import * as TabsPrimitive from '@radix-ui/react-tabs';
+import { Tabs } from '@base-ui/react/tabs';
 
 import { cn } from '@/lib/utils';
 
-function Tabs({ className, ...props }: React.ComponentProps<typeof TabsPrimitive.Root>) {
+function TabsRoot({ className, ...props }: Tabs.Root.Props) {
   return (
-    <TabsPrimitive.Root data-slot="tabs" className={cn('flex flex-col', className)} {...props} />
+    <Tabs.Root data-slot="tabs" className={cn('flex flex-col', className)} {...props} />
   );
 }
 
-function TabsList({ className, ...props }: React.ComponentProps<typeof TabsPrimitive.List>) {
+function TabsList({ className, ...props }: Tabs.List.Props) {
   return (
-    <TabsPrimitive.List
+    <Tabs.List
       data-slot="tabs-list"
       className={cn(
         'inline-flex h-9 items-center justify-center rounded-lg bg-muted p-1 text-muted-foreground',
@@ -24,12 +24,12 @@ function TabsList({ className, ...props }: React.ComponentProps<typeof TabsPrimi
   );
 }
 
-function TabsTrigger({ className, ...props }: React.ComponentProps<typeof TabsPrimitive.Trigger>) {
+function TabsTrigger({ className, ...props }: Tabs.Tab.Props) {
   return (
-    <TabsPrimitive.Trigger
+    <Tabs.Tab
       data-slot="tabs-trigger"
       className={cn(
-        'inline-flex items-center justify-center rounded-md px-3 py-1 text-sm font-medium whitespace-nowrap transition-all disabled:pointer-events-none disabled:opacity-50 data-[state=active]:text-foreground',
+        'inline-flex items-center justify-center rounded-md px-3 py-1 text-sm font-medium whitespace-nowrap transition-all disabled:pointer-events-none disabled:opacity-50 aria-disabled:pointer-events-none aria-disabled:opacity-50 data-selected:text-foreground',
         className,
       )}
       {...props}
@@ -37,9 +37,9 @@ function TabsTrigger({ className, ...props }: React.ComponentProps<typeof TabsPr
   );
 }
 
-function TabsContent({ className, ...props }: React.ComponentProps<typeof TabsPrimitive.Content>) {
+function TabsContent({ className, ...props }: Tabs.Panel.Props) {
   return (
-    <TabsPrimitive.Content
+    <Tabs.Panel
       data-slot="tabs-content"
       className={cn(
         'mt-2 focus-visible:ring-0 focus-visible:ring-offset-0 focus-visible:transition-none',
@@ -50,4 +50,4 @@ function TabsContent({ className, ...props }: React.ComponentProps<typeof TabsPr
   );
 }
 
-export { Tabs, TabsContent, TabsList, TabsTrigger };
+export { TabsRoot as Tabs, TabsContent, TabsList, TabsTrigger };

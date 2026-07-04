@@ -1,7 +1,8 @@
 'use client';
 
 import * as React from 'react';
-import { Slot } from '@radix-ui/react-slot';
+import { mergeProps } from '@base-ui/react/merge-props';
+import { useRender } from '@base-ui/react/use-render';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 import { cn } from '@/lib/utils';
@@ -222,26 +223,30 @@ const SnapSliderContent = ({
 };
 SnapSliderContent.displayName = 'SnapSliderContent';
 
-type SnapSliderItemProps = React.HTMLAttributes<HTMLDivElement> & {
-  asChild?: boolean;
+type SnapSliderItemProps = React.ComponentProps<'div'> & {
+  render?: React.ReactElement | ((props: React.ComponentProps<'div'>, state: object) => React.ReactElement);
 };
 
-const SnapSliderItem = ({ className, asChild, ...props }: SnapSliderItemProps) => {
+const SnapSliderItem = ({ className, render, ...props }: SnapSliderItemProps) => {
   const { orientation } = useSnapSlider();
-  const Comp = asChild ? Slot : 'div';
 
-  return (
-    <Comp
-      className={cn(
-        'shrink-0',
-        orientation === 'horizontal' ? 'snap-start' : 'snap-start',
-        className,
-      )}
-      role="group"
-      aria-roledescription="slide"
-      {...props}
-    />
-  );
+  return useRender({
+    defaultTagName: 'div' as const,
+    render,
+    props: mergeProps(
+      {
+        'data-slot': 'snap-slider-item',
+        className: cn(
+          'shrink-0',
+          orientation === 'horizontal' ? 'snap-start' : 'snap-start',
+          className,
+        ),
+        role: 'group' as const,
+        'aria-roledescription': 'slide',
+      } as React.ComponentProps<'div'>,
+      props as React.ComponentProps<'div'>,
+    ),
+  });
 };
 SnapSliderItem.displayName = 'SnapSliderItem';
 

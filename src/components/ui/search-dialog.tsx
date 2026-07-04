@@ -342,15 +342,11 @@ export default function SearchDialog({
     }
   }, [open]);
 
-  const handleOpenAutoFocus = (event: Event) => {
-    if (isTouchDevice) return;
-    event.preventDefault();
-    inputRef.current?.focus({ preventScroll: true });
-  };
+  // Base UI initialFocus: focus the input on open (not on touch devices)
+  const handleInitialFocus = !isTouchDevice ? inputRef : false;
 
-  const handleCloseAutoFocus = (event: Event) => {
-    event.preventDefault();
-  };
+  // Base UI finalFocus: don't move focus back on close (prevent scroll jump)
+  const handleFinalFocus = false as const;
 
   // Handle keyboard navigation
   const handleKeyDown = (e: KeyboardEvent<HTMLInputElement>) => {
@@ -460,9 +456,9 @@ export default function SearchDialog({
 
   return (
     <DialogContent
-      className="top-auto bottom-0 h-[75dvh] w-full max-w-(--breakpoint-sm) translate-y-0 rounded-t-xl p-0 shadow-none outline-hidden data-[state=closed]:zoom-out-100 data-[state=closed]:slide-out-to-bottom-1/2 data-[state=open]:zoom-in-100 data-[state=open]:slide-in-from-bottom-1/2 sm:top-[20dvh] sm:bottom-auto sm:h-auto sm:rounded-lg sm:data-[state=closed]:zoom-out-95 sm:data-[state=closed]:slide-out-to-bottom-1 sm:data-[state=open]:zoom-in-95 sm:data-[state=open]:slide-in-from-bottom-1"
-      onOpenAutoFocus={handleOpenAutoFocus}
-      onCloseAutoFocus={handleCloseAutoFocus}
+      className="top-auto bottom-0 h-[75dvh] w-full max-w-(--breakpoint-sm) translate-y-0 rounded-t-xl p-0 shadow-none outline-hidden data-closed:zoom-out-100 data-closed:slide-out-to-bottom-1/2 data-open:zoom-in-100 data-open:slide-in-from-bottom-1/2 sm:top-[20dvh] sm:bottom-auto sm:h-auto sm:rounded-lg sm:data-closed:zoom-out-95 sm:data-closed:slide-out-to-bottom-1 sm:data-open:zoom-in-95 sm:data-open:slide-in-from-bottom-1"
+      initialFocus={handleInitialFocus}
+      finalFocus={handleFinalFocus}
     >
       <DialogTitle className="sr-only">Search</DialogTitle>
       <div className="relative flex flex-col" onKeyDown={handleKeyDown}>
@@ -473,8 +469,7 @@ export default function SearchDialog({
             query={query}
             setQuery={setQuery}
           />
-          <DialogClose asChild>
-            <Button
+          <DialogClose render={<Button
               className={cn(
                 'absolute top-1/2 right-4 -translate-y-1/2 rounded border border-muted px-3 py-1.5 outline-hidden',
                 isTouchDevice && 'hidden',
@@ -482,13 +477,12 @@ export default function SearchDialog({
               variant="outline"
               tabIndex={2}
               size="xs"
-            >
+            />}>
               <span className="sr-only">To close the search dialog, press Escape</span>
               <span className="text-xs leading-none tracking-tight" aria-hidden>
                 Esc
               </span>
-            </Button>
-          </DialogClose>
+            </DialogClose>
         </div>
 
         <ScrollArea className="max-h-[calc(75dvh-3.125rem)] sm:max-h-[min(calc(40rem-3.5rem),calc(60dvh-3.5rem))]">

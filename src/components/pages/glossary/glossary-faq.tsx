@@ -28,9 +28,7 @@ function GlossaryFaq({ className, term, items }: IGlossaryFaqProps) {
         Questions & Answers about {term}
       </h2>
       <Accordion
-        type="single"
-        collapsible
-        defaultValue="item-0"
+        defaultValue={['item-0']}
         className="mt-7 w-full border-y border-border text-foreground"
       >
         {items.map((item, index) => (
