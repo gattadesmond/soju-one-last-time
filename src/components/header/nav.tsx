@@ -134,7 +134,7 @@ function Nav({ className, items, ariaLabel = 'Primary navigation' }: IHeaderNavP
                   lastPointerTypeRef.current = '';
                 }}
                 className={cn(
-                  'relative inline-flex h-full items-center gap-0.5 px-5 py-0 text-sm leading-none font-medium tracking-tight transition-colors',
+                  'relative inline-flex h-full items-center gap-0.5 px-5 py-0 font-display text-sm leading-none font-medium tracking-tight transition-colors',
                   isOpen && 'after:absolute after:top-full after:left-0 after:h-4.5 after:w-full',
                   isOpen
                     ? 'bg-gray-94 text-background'
@@ -183,7 +183,7 @@ function Nav({ className, items, ariaLabel = 'Primary navigation' }: IHeaderNavP
                             </div>
                           )}
                           <div className="flex flex-col gap-1.5">
-                            <span className="text-sm leading-none font-medium tracking-tight text-background">
+                            <span className="font-display text-sm leading-none font-medium tracking-tight text-background">
                               {child.label}
                             </span>
                             {child.description && (
@@ -217,7 +217,7 @@ function Nav({ className, items, ariaLabel = 'Primary navigation' }: IHeaderNavP
             }}
             onClick={closeDropdown}
             className={cn(
-              'inline-flex items-center gap-0.5 px-5 text-sm leading-none font-medium tracking-tight transition-colors first:pl-0 last:pr-6',
+              'inline-flex items-center gap-0.5 px-5 font-display text-sm leading-none font-medium tracking-tight transition-colors first:pl-0 last:pr-6',
               isHovered ? 'text-background hover:bg-gray-94' : 'text-background',
             )}
           >
